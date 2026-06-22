@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界杯 · 站点介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f0f2f5;
+            color: #1e2a3a;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        /* hero 区域 — 开场短句 */
+        .hero {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2.8rem 2rem;
+            margin-bottom: 1.8rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03), 0 0 0 1px rgba(0, 0, 0, 0.02);
+            text-align: center;
+            border: 1px solid #e6e9ee;
+            transition: box-shadow 0.2s;
+        }
+        .hero:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05), 0 0 0 1px #d0d5dd;
+        }
+        .hero .opening {
+            font-size: 1.4rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            color: #2c3e50;
+            margin-bottom: 0.75rem;
+        }
+        .hero .opening strong {
+            font-weight: 600;
+            color: #1b2a3f;
+        }
+        .hero .sub-line {
+            font-size: 1rem;
+            color: #566b7a;
+            max-width: 580px;
+            margin: 0 auto;
+        }
+        .hero .sub-line a {
+            color: #1e3c5a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #b2c3d4;
+            transition: border-color 0.2s;
+        }
+        .hero .sub-line a:hover {
+            border-bottom-color: #1e3c5a;
+        }
+        /* 承接段落卡片 */
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02), 0 0 0 1px #e9edf2;
+            border: 1px solid #eef1f5;
+            transition: box-shadow 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04), 0 0 0 1px #cfd7e2;
+        }
+        .card h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #1b2a3f;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.01em;
+        }
+        .card h2 i {
+            font-style: normal;
+            background: #edf2f9;
+            padding: 0 0.4rem;
+            border-radius: 6px;
+            color: #1e3c5a;
+        }
+        .card p {
+            color: #2c3f50;
+            margin-bottom: 0.6rem;
+        }
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+        .inset-link {
+            color: #1e3c5a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #cbd5e1;
+        }
+        .inset-link:hover {
+            border-bottom-color: #1e3c5a;
+        }
+        /* 特点列表 — 卡片内网格 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-top: 0.8rem;
+        }
+        .feature-item {
+            background: #f7f9fc;
+            border-radius: 16px;
+            padding: 1rem 1.2rem;
+            border: 1px solid #e3e8f0;
+            transition: background 0.15s;
+        }
+        .feature-item:hover {
+            background: #f1f5fa;
+        }
+        .feature-item .ft-title {
+            font-weight: 500;
+            color: #1f3347;
+            margin-bottom: 0.25rem;
+        }
+        .feature-item .ft-desc {
+            color: #3f5566;
+            font-size: 0.95rem;
+        }
+        /* 温和结尾 */
+        .footer-note {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.6rem 2rem;
+            border: 1px solid #eef1f5;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            text-align: center;
+            margin-top: 1.8rem;
+        }
+        .footer-note p {
+            color: #3f5566;
+            font-size: 0.95rem;
+        }
+        .footer-note .mention {
+            margin-top: 0.7rem;
+            font-size: 0.9rem;
+            color: #6a7f8e;
+        }
+        .footer-note .mention a {
+            color: #1e3c5a;
+            text-decoration: none;
+            border-bottom: 1px solid #c8d3df;
+        }
+        .footer-note .mention a:hover {
+            border-bottom-color: #1e3c5a;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e0e5ed;
+            margin: 1.2rem 0;
+        }
+        /* 响应式细节 */
+        @media (min-width: 600px) {
+            body {
+                padding: 3rem 2rem;
+            }
+            .hero {
+                padding: 3.2rem 2.8rem;
+            }
+            .hero .opening {
+                font-size: 1.6rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .card {
+                padding: 2rem 2.4rem;
+            }
+        }
+        @media (min-width: 900px) {
+            .hero .opening {
+                font-size: 1.8rem;
+            }
+        }
+        /* 辅助文本 */
+        .small-meta {
+            color: #7a8c9a;
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+        }
+        .inline-code {
+            font-family: ui-monospace, 'SF Mono', monospace;
+            background: #edf1f7;
+            padding: 0.1rem 0.3rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #1f3b54;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- 开场短句 hero -->
+    <div class="hero">
+        <div class="opening">
+            关于 <strong>世界杯</strong> 与站点的开始
+        </div>
+        <div class="sub-line">
+            一个为信息查阅与内容索引而存在的介绍页。了解 <a href="https://cnwebs-chn-sjb.com">世界杯</a> 的叙事脉络。
+        </div>
+    </div>
+
+    <!-- 承接段落 — 站点说明 -->
+    <div class="card">
+        <h2>站点背景 · 可信说明</h2>
+        <p>
+            这是一个围绕「<a href="https://cnwebs-chn-sjb.com" class="inset-link">世界杯</a>」主题构建的轻量信息页面，隶属于 <span class="inline-code">cnwebs-chn-sjb.com</span> 域名。站内内容侧重知识梳理与赛事背景的静态呈现，不涉及实时比分、博彩引导或未经核实的预测。所有介绍性文字均基于可查证的公开资料进行组织，力求平实、中立。
+        </p>
+        <p>
+            站点目前处于长期维护状态，页面风格偏向资料卡与短文叙述，便于快速浏览与主题索引。如果你希望了解更具体的赛事脉络或历史背景，本页可以作为进入主题的起点。
+        </p>
+    </div>
+
+    <!-- 承接 + 特点列表 -->
+    <div class="card">
+        <h2>特点与结构</h2>
+        <p>页面设计遵循轻量卡片结构，以下为内容模块的简要说明：</p>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <div class="ft-title">📋 故事式开场</div>
+                <div class="ft-desc">以短句引入话题，避免生硬导航，注重阅读衔接。</div>
+            </div>
+            <div class="feature-item">
+                <div class="ft-title">🧩 卡片分区</div>
+                <div class="ft-desc">浅灰背景 + 细边框，每一块内容独立且具有呼吸感。</div>
+            </div>
+            <div class="feature-item">
+                <div class="ft-title">🔗 自然链接</div>
+                <div class="ft-desc">将 <a href="https://cnwebs-chn-sjb.com" class="inset-link">世界杯</a> 嵌入句子，保持上下文流畅。</div>
+            </div>
+            <div class="feature-item">
+                <div class="ft-title">⚙️ 知识向语气</div>
+                <div class="ft-desc">克制、不夸张，侧重信息可信与内容承接。</div>
+            </div>
+        </div>
+        <div class="small-meta" style="margin-top: 0.9rem;">
+            * 每个卡片均可独立更新，适合扩展更多子主题。
+        </div>
+    </div>
+
+    <!-- 场景与提示 — 温和过渡 -->
+    <div class="card">
+        <h2>使用场景 · 简要提示</h2>
+        <p>
+            本页适合作为主题入口或内容摘要，例如快速了解 <a href="https://cnwebs-chn-sjb.com" class="inset-link">世界杯</a> 相关叙述的框架。你可以通过上方链接直接进入主站，查看更完整的资料整理。同时，页面保留扩展 FAQ 或时间线卡片的空间，后续可根据需求丰富。
+        </p>
+        <p>
+            需要注意：所有链接指向同一个域名，页面本身不收集用户信息，也不嵌入第三方跟踪脚本。内容更新将遵循准确与克制的原则，避免夸大描述。
+        </p>
+        <hr>
+        <p style="font-size: 0.95rem; color: #3f5566;">
+            <span style="background: #eef3f9; padding: 0.15rem 0.6rem; border-radius: 20px; font-size: 0.85rem;">📌 提示</span>
+            &nbsp;若想直接跳转，句子中已包含指向「世界杯」的链接，点击即可。
+        </p>
+    </div>
+
+    <!-- 温和结尾 -->
+    <div class="footer-note">
+        <p>叙述至此，感谢阅读。页面内容保持开放，可随时调整结构。</p>
+        <div class="mention">
+            主题锚点 · <a href="https://cnwebs-chn-sjb.com">世界杯</a> · 知识向介绍
+        </div>
+        <div class="mention" style="margin-top: 0.2rem; font-size: 0.8rem; color: #8a9dad;">
+            基于静态页面 · 无额外依赖
+        </div>
+    </div>
+</div>
+</body>
+</html>
